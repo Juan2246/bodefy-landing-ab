@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experimento A/B | Bodefy · Laboratorio 8</title>
+  <meta name="description" content="Compara las dos versiones de la landing de Bodefy: orden y presupuesto frente a una calculadora interactiva.">
+  <meta name="theme-color" content="#157A41">
+  <meta property="og:title" content="Bodefy · Experimento A/B">
+  <meta property="og:description" content="Dos formas de empezar una compra mejor organizada. Presentación del Laboratorio 8, UPC 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/compare.css">
+  <script src="assets/compare.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="container"><a class="brand" href="index.html"><img src="assets/logo.svg" width="35" height="38" alt="">Bodefy</a><p class="brand-tagline">Tú pides, tu barrio responde.</p><span class="lab-tag">UPC 2026 · LABORATORIO 8</span></div></header>
+  <main>
+    <div class="compare-heading container"><span class="eyebrow">TECHNICAL SALES &amp; MARKETING</span><h1>Una idea. Dos formas de empezar.</h1><p>¿Una promesa clara o una experiencia que demuestra el valor primero?</p><div class="view-toggle" role="group" aria-label="Tamaño de vista previa"><button type="button" data-view="desktop" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8m-4-4v4"/></svg>Escritorio</button><button type="button" data-view="mobile" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>Celular</button></div><p id="view-status" class="fine-print" role="status">Vista de escritorio · 1280 px, ajustada al panel. Puedes navegar dentro de cada página.</p></div>
+    <section class="comparison" aria-label="Versiones A y B lado a lado">
+      <article class="variant-preview"><header><div><span class="variant-letter">A</span><span><strong>Orden y presupuesto</strong><small>CONTROL · FORMULARIO PRIMERO</small></span></div><a href="a/" target="_blank" rel="noopener" aria-label="Abrir versión A en otra pestaña">Abrir A <span aria-hidden="true">↗</span></a></header><div class="preview-stage"><div class="iframe-shell"><iframe src="a/" title="Versión A: Orden y presupuesto" loading="eager"></iframe></div></div></article>
+      <article class="variant-preview"><header><div><span class="variant-letter variant-letter-b">B</span><span><strong>Pregunta + calculadora</strong><small>VARIANTE · INTERACCIÓN PRIMERO</small></span></div><a href="b/" target="_blank" rel="noopener" aria-label="Abrir versión B en otra pestaña">Abrir B <span aria-hidden="true">↗</span></a></header><div class="preview-stage"><div class="iframe-shell"><iframe src="b/" title="Versión B: Pregunta y calculadora interactiva" loading="eager"></iframe></div></div></article>
+    </section>
+    <noscript><p class="container">El cambio de tamaño requiere JavaScript. Usa «Abrir A» y «Abrir B» para ver cada página completa.</p></noscript>
+    <section class="experiment container" aria-labelledby="experiment-title"><div class="experiment-heading"><span class="eyebrow">FICHA DEL EXPERIMENTO</span><h2 id="experiment-title">Del diseño a una hipótesis medible.</h2></div><dl class="experiment-facts"><div><dt>Hipótesis</dt><dd>Interactuar con el presupuesto antes de dejar los datos aumentará la proporción de visitantes que completan el formulario.</dd></div><div><dt>Variable evaluada</dt><dd>Experiencia de entrada: mensaje, estructura y calculadora. A presenta el formulario en el hero; B muestra primero el valor mediante la interacción.</dd></div><div><dt>Métrica principal</dt><dd><strong>Tasa de conversión</strong> = visitantes únicos con formulario válido ÷ visitantes únicos asignados a la variante × 100.</dd></div><div><dt>Asignación y control</dt><dd>50/50 aleatorio, persistente en este navegador. Mismo lead magnet, campos, precios, privacidad y flujo de descarga.</dd></div></dl><p class="experiment-note">Este experimento compara dos experiencias completas: no aísla el efecto de un solo elemento. No hay analítica remota ni resultados medidos en este prototipo. Las vistas de esta página de presentación deben excluirse de una medición real.</p></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span class="brand"><img src="assets/logo.svg" width="28" height="31" alt="">Bodefy</span><p>Prototipo académico · UPC 2026 · Laboratorio 8</p><a class="fine-print" href="README.md">Ver documentación</a></div></footer>
+</body>
+</html>

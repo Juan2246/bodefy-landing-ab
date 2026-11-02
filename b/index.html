@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto gastas en la bodega? | Bodefy</title>
+  <meta name="description" content="Prueba tu presupuesto semanal, arma tu lista y descárgala gratis. Con Bodefy, tu próxima compra empieza con las cuentas claras.">
+  <meta name="theme-color" content="#1F9D55">
+  <meta property="og:title" content="¿Cuánto se te va en la bodega cada semana? | Bodefy">
+  <meta property="og:description" content="Haz las cuentas, arma tu lista y descárgala gratis. Tú pides, tu barrio responde.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../assets/planner.js" defer></script>
+  <script src="../assets/motion.js" defer></script>
+  <script src="../assets/chatbot.js" defer></script>
+</head>
+<body data-variant="b">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Bodefy, inicio">
+        <img src="../assets/logo.svg" alt="" width="38" height="44"><span>Bodefy<span class="brand-dot">.</span></span>
+      </a>
+      <p class="brand-tagline">Tú pides, tu barrio responde.</p>
+      <a class="header-cta" href="#planificador">Crear mi lista gratis <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="awning-frame" aria-hidden="true"><div class="awning"></div></div>
+    <section class="hero-b">
+      <div class="container">
+        <div class="hero-heading">
+          <div>
+            <p class="eyebrow"><span class="small-dot" aria-hidden="true"></span> TU COMPRA SEMANAL, CON LAS CUENTAS CLARAS</p>
+            <h1>¿Cuánto se te va en la <span class="hero-highlight">bodega</span> cada semana?</h1>
+            <p class="hero-description">Ponle un número a tu próxima compra. Ajusta tu presupuesto, arma tu lista y descubre cuánto te queda <strong>antes de salir de casa.</strong></p>
+          </div>
+          <div class="hero-note" aria-hidden="true">
+            <svg class="note-spark" viewBox="0 0 32 32" fill="none"><path d="M16 3v26M3 16h26M7 7l18 18M7 25 25 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            <p>Tu presupuesto<br>manda.</p>
+            <svg viewBox="0 0 92 63" fill="none"><path d="M77 6C90 37 49 57 12 45m0 0 18-9M12 45l12 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="calculator-shell" id="calculator">
+          <div class="calculator-workspace">
+            <div class="calculator-topline"><p class="eyebrow">PRUÉBALO AQUÍ</p><span class="interactive-badge"><span aria-hidden="true"></span> Calculadora en vivo</span></div>
+            <div class="budget-heading">
+              <label for="budget">Mi presupuesto semanal</label>
+              <output id="budget-value" for="budget">S/ 60.00</output>
+            </div>
+            <input id="budget" class="budget-slider" type="range" min="30" max="200" step="1" value="60" aria-describedby="budget-help">
+            <div class="range-labels"><span>S/ 30</span><p id="budget-help">Desliza y haz tus cuentas</p><span>S/ 200</span></div>
+            <div class="products-heading"><h2>¿Qué llevamos esta semana?</h2><span>Agrega o quita productos</span></div>
+            <div id="product-controls" class="product-controls"></div>
+            <p id="calculator-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+            <div class="calculator-action">
+              <a class="button" href="#planificador">Guardar mi lista gratis <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <span class="calculator-free">Es tuya. Llévala contigo.</span>
+            </div>
+          </div>
+          <div class="receipt-space">
+            <span class="receipt-caption">Así se ve tu próxima compra</span>
+            <div class="ticket live-ticket" data-print aria-label="Resumen de tu lista de compras">
+              <div class="ticket-brand"><img src="../assets/logo.svg" alt="" width="27" height="32"><strong>Bodefy</strong></div>
+              <p class="ticket-kicker">TU BODEGA, TU PRESUPUESTO</p>
+              <div class="ticket-rule"></div>
+              <div class="ticket-meta"><span>LISTA SEMANAL</span><span>#0001</span></div>
+              <div class="ticket-table-head"><span>PRODUCTO</span><span>SUBTOTAL</span></div>
+              <div id="receipt-items">
+                <div class="ticket-line"><span>Arroz × 2 kg</span><span>S/ 9.00</span></div>
+                <div class="ticket-line"><span>Aceite × 1 botella</span><span>S/ 8.50</span></div>
+                <div class="ticket-line"><span>Leche × 2 unidades</span><span>S/ 8.00</span></div>
+                <div class="ticket-line"><span>Huevos × 1 docena</span><span>S/ 10.00</span></div>
+                <div class="ticket-line"><span>Azúcar × 1 kg</span><span>S/ 4.00</span></div>
+              </div>
+              <div class="ticket-total"><span>Total estimado</span><strong id="receipt-total">S/ 39.50</strong></div>
+              <div class="ticket-budget"><span>Tu presupuesto</span><span id="receipt-budget">S/ 60.00</span></div>
+              <div class="ticket-balance"><span>Te queda</span><strong id="receipt-balance">S/ 20.50</strong></div>
+              <p class="ticket-thanks">¡Qué bien se siente tener las cuentas claras!</p>
+              <div class="ticket-barcode" aria-hidden="true"></div>
+            </div>
+            <p class="receipt-disclaimer">Precios referenciales; cada bodega<br>confirma sus ofertas.</p>
+          </div>
+        </div>
+        <p class="hero-trust"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 8 3v6c0 4-8 9-8 9s-8-5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8 12 3 3 5-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> Sin tarjeta. Sin obligación de compra.</p>
+      </div>
+    </section>
+
+    <section class="save-section section" id="planificador" aria-labelledby="save-title">
+      <div class="container save-grid">
+        <div class="save-copy" data-reveal>
+          <p class="eyebrow">LAS CUENTAS LISTAS. LA SEMANA TAMBIÉN.</p>
+          <h2 class="section-heading" id="save-title">Guarda tu lista<br>y descárgala <span>gratis.</span></h2>
+          <p class="section-intro">Ya diste el primer paso. Lleva tu <strong>Planificador de compras y presupuesto semanal</strong> contigo y ten a la mano lo que necesitas comprar.</p>
+          <ul class="save-benefits">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tu lista, tal como la acabas de armar.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Un presupuesto que puedes ajustar.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Una descarga gratuita para tu semana.</li>
+          </ul>
+          <div class="chalk-note"><span class="chalk-corner" aria-hidden="true"></span><p>Aquí siempre hay<br>algo bueno.</p><span class="chalk-underline" aria-hidden="true"></span></div>
+        </div>
+        <div class="form-card" data-reveal>
+          <div class="form-intro"><span class="form-step">TU PLANIFICADOR GRATUITO</span><h3>Tu próxima compra empieza aquí.</h3><p>Solo unos datos y tu lista está lista.</p></div>
+          <form id="planner-form" method="dialog" novalidate>
+            <div class="field"><label for="name">Tu nombre</label><input id="name" name="name" type="text" autocomplete="given-name" placeholder="¿Cómo te llamas?" required minlength="2" aria-describedby="name-error"><span class="field-error" id="name-error"></span></div>
+            <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required aria-describedby="email-error"><span class="field-error" id="email-error"></span></div>
+            <div class="field"><label for="district">Tu distrito</label><select id="district" name="district" autocomplete="address-level2" required aria-describedby="district-error"><option value="">Selecciona tu distrito</option><option>Pueblo Libre</option><option>Jesús María</option><option>Lince</option><option>Magdalena del Mar</option><option>San Miguel</option><option>Breña</option><option>Surquillo</option><option>San Martín de Porres</option><option>Los Olivos</option><option>Comas</option><option>Villa El Salvador</option><option>San Juan de Lurigancho</option><option>Otro</option></select><span class="field-error" id="district-error"></span></div>
+            <div class="privacy-field"><input id="privacy" name="privacy" type="checkbox" required aria-describedby="privacy-error" aria-labelledby="privacy-label privacy-link"><div class="privacy-copy"><label id="privacy-label" for="privacy">Acepto el uso local de mis datos según la</label> <button class="text-button" id="privacy-link" type="button" data-privacy>política de privacidad</button>.</div><span class="field-error" id="privacy-error"></span></div>
+            <button class="button form-submit" type="submit">Crear mi lista gratis <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <p id="form-status" class="form-status" role="status"></p>
+            <p class="trust-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/></svg> Sin tarjeta. Sin obligación de compra.</p>
+            <p class="form-local-note">Prototipo académico. Tus datos se guardan solo en este navegador.</p>
+          </form>
+          <noscript><p class="fine-print">Activa JavaScript para usar la calculadora y descargar tu lista. Tus datos se guardan solo en este navegador.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilot-section" aria-labelledby="pilot-title">
+      <div class="container">
+        <div class="pilot-heading"><p class="eyebrow" id="pilot-title">UN BARRIO QUE SE ORGANIZA</p><span class="pilot-tag">Cifras del piloto · Demo</span></div>
+        <div class="pilot-stats">
+          <div class="pilot-stat"><strong data-counter="1200" data-prefix="+">+1 200</strong><span>listas creadas</span></div>
+          <div class="pilot-stat"><strong data-counter="12">12</strong><span>distritos de Lima</span></div>
+          <div class="pilot-stat"><strong><span data-counter="100">100</span><small>%</small></strong><span>gratis para empezar</span></div>
+        </div>
+        <p class="fine-print">Cifras de demostración del piloto académico; no representan usuarios reales.</p>
+      </div>
+    </section>
+
+    <section class="section steps-section" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-topline" data-reveal><div><p class="eyebrow">DE TU LISTA A TU BARRIO</p><h2 class="section-heading" id="steps-title">Así de simple funciona Bodefy.</h2></div><p class="handwritten">La bodega de siempre.<br>Una forma más fácil.</p></div>
+        <div class="steps">
+          <article class="step" data-reveal><div class="step-top"><span class="step-number">01</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="8" y="6" width="17" height="22" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M12 6V3h9v3M12 13h9m-9 5h9m-9 5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Arma tu lista</h3><p>Elige los productos de tu semana y las cantidades que necesitas.</p></article>
+          <article class="step" data-reveal><div class="step-top"><span class="step-number">02</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="7" y="4" width="18" height="24" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M11 9h10v5H11zM11 19h2m6 0h2m-10 5h2m6 0h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Revisa tu presupuesto</h3><p>Mira el total estimado, ajusta tu compra y ten claro cuánto te queda.</p></article>
+          <article class="step" data-reveal><div class="step-top"><span class="step-number">03</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 12h22l-3-7H8l-3 7ZM7 17v10h18V17M13 27V17h7v10M5 12v3a3 3 0 0 0 6 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 3 3 0 0 0 6 0v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Descarga y cotiza</h3><p>Guarda tu lista. En el piloto activo, pide ofertas a bodegas de tu distrito.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials-section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="testimonial-heading" data-reveal><p class="eyebrow">HISTORIAS QUE PODRÍAN SER LAS TUYAS</p><h2 class="section-heading" id="testimonials-title">Cada compra tiene su historia.</h2><p class="section-intro">Tres formas de darle un poco más de orden a la semana.</p><p class="fiction-label">Testimonios ficticios, creados para este prototipo académico.</p></div>
+        <div class="testimonials">
+          <article class="testimonial" data-reveal><span class="quote-mark" aria-hidden="true">“</span><blockquote>Entre el colegio y la casa, la lista me ayuda a no olvidar nada. Y sé cuánto voy a gastar antes de salir.</blockquote><div class="person"><span class="avatar">MR</span><div><strong>María R.</strong><span>Mamá · Pueblo Libre</span></div></div></article>
+          <article class="testimonial" data-reveal><span class="quote-mark" aria-hidden="true">“</span><blockquote>Con mi presupuesto de estudiante, cada sol cuenta. Ver el saldo mientras armo mi lista me ordena la semana.</blockquote><div class="person"><span class="avatar avatar-blue">DL</span><div><strong>Diego L.</strong><span>Estudiante · Lince</span></div></div></article>
+          <article class="testimonial" data-reveal><span class="quote-mark" aria-hidden="true">“</span><blockquote>Me gusta comprar en mi barrio. Tener la lista y las cuentas juntas hace todo mucho más fácil.</blockquote><div class="person"><span class="avatar avatar-yellow">CP</span><div><strong>Carmen P.</strong><span>Dueña de casa · San Martín de Porres</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="container final-cta-inner">
+        <div data-reveal><p class="eyebrow">MENOS IMPROVISAR. MÁS DISFRUTAR.</p><h2 id="final-title">Tu semana empieza<br>con una buena lista.</h2><p>Y tu barrio tiene lo que necesitas.</p><a class="button" href="#planificador">Crear mi lista gratis <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="final-trust">Sin tarjeta. Sin obligación de compra.</span></div>
+        <div class="storefront-wrap" aria-hidden="true"><span class="storefront-note">Nos vemos en el barrio.</span><svg class="storefront" viewBox="0 0 390 300" fill="none"><path d="M29 281h334" stroke="#F2B705" stroke-width="3" stroke-linecap="round"/><rect x="60" y="97" width="269" height="183" rx="2" fill="#FBF7EF"/><rect x="76" y="37" width="237" height="57" rx="4" fill="#F2B705"/><text x="194" y="76" fill="#0B1F3A" text-anchor="middle" font-family="Poppins,sans-serif" font-size="26" font-weight="800">LA BODEGA</text><path d="M62 101h266l18 42H44l18-42Z" fill="#1F9D55"/><path d="m97 101-7 42h36l4-42m35 0-1 42h35v-42m35 0 4 42h36l-7-42m35 0 11 42h33l-18-42" fill="#FBF7EF"/><path d="M44 143h46v11a23 23 0 0 1-46 0v-11Zm82 0h38v11a19 19 0 0 1-38 0v-11Zm73 0h39v11a19.5 19.5 0 0 1-39 0v-11Zm75 0h39v11a19.5 19.5 0 0 1-39 0v-11Z" fill="#1F9D55"/><path d="M90 143h36v11a18 18 0 0 1-36 0v-11Zm74 0h35v11a17.5 17.5 0 0 1-35 0v-11Zm74 0h36v11a18 18 0 0 1-36 0v-11Zm75 0h33v11a16.5 16.5 0 0 1-33 0v-11Z" fill="#FBF7EF"/><rect x="83" y="187" width="115" height="70" rx="3" fill="#B9D5C2" stroke="#0B1F3A" stroke-width="5"/><path d="M84 235h112m-55-45v64" stroke="#0B1F3A" stroke-width="4"/><rect x="103" y="207" width="15" height="25" rx="2" fill="#F2B705"/><rect x="155" y="216" width="23" height="16" rx="2" fill="#FBF7EF"/><path d="m158 216 3-7h12l3 7" fill="#FBF7EF"/><rect x="225" y="185" width="73" height="95" rx="3" fill="#2B3A33"/><path d="M235 196h53v41h-53z" fill="#587064"/><circle cx="287" cy="251" r="3" fill="#F2B705"/><rect x="27" y="248" width="30" height="32" rx="3" fill="#F2B705"/><path d="M42 247v-24m0 12c-17 1-20-12-20-12s14-3 20 12Zm0-5c16 0 20-14 20-14s-15 0-20 14Z" stroke="#7EC88E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M323 280v-58h32v58" fill="#1F9D55"/><path d="M328 230h22m-22 10h22m-22 10h22" stroke="#B9D5C2" stroke-width="3"/></svg></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html" aria-label="Bodefy, inicio"><img src="../assets/logo.svg" alt="" width="30" height="35"><span>Bodefy<span class="brand-dot">.</span></span></a><p>Prototipo académico · UPC 2026 · Laboratorio 8</p><button type="button" class="text-button" data-privacy>Privacidad</button></div></footer>
+</body>
+</html>
